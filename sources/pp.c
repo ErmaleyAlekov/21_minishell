@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pp.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uterese <uterese@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: nephilister <nephilister@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 12:17:51 by uterese           #+#    #+#             */
-/*   Updated: 2021/09/27 12:17:53 by uterese          ###   ########.fr       */
+/*   Updated: 2021/09/27 20:36:07 by nephilister      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void    sig_main(int sig)
 {
     if (sig == SIGINT)
     {
-        write(1, "\n", 1);
+        write(2, "\n", 1);
         rl_on_new_line();
         rl_replace_line("", 0);
         rl_redisplay();
@@ -40,9 +40,14 @@ void    sig_main(int sig)
 void	sig_fork(int sig)
 {
 	if (sig == SIGINT)
-		printf("\n");
+		ft_putstr_fd("\n", 2);
+		// printf("\n");
 	else if (sig == SIGQUIT)
-		printf("%sQuit: 3\n", RED);
+	{
+		ft_putstr_fd(RED, 2);
+		ft_putstr_fd("Quit: 3\n", 2);
+	}
+		// printf("%sQuit: 3\n", RED);
 }
 
 int	ft_isbuiltin(char **args)

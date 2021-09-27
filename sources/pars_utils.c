@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pars_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uterese <uterese@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: nephilister <nephilister@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 12:17:36 by uterese           #+#    #+#             */
-/*   Updated: 2021/09/27 12:17:37 by uterese          ###   ########.fr       */
+/*   Updated: 2021/09/27 20:30:05 by nephilister      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ void    read_heredoc(t_cmdito **cmd, char *del)
 	fd = open(file, O_RDWR | O_TRUNC | O_CREAT, 0644);
 	while (21)
 	{
-		write(1, "> ", 2);
+		write(2, "> ", 2);
 		get_next_line(0, &str);
 		if (!ft_strncmp(str, delim, ft_strlen(delim) + 1))
 			break ;

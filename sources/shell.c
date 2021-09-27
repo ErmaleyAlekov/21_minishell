@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   shell.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uterese <uterese@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: nephilister <nephilister@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 12:18:12 by uterese           #+#    #+#             */
-/*   Updated: 2021/09/27 12:18:13 by uterese          ###   ########.fr       */
+/*   Updated: 2021/09/27 20:35:05 by nephilister      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,9 @@ char    *ft_get_line(void)
     ale = readline(prompt);
     if (!ale)
     {
-        printf("%sExit\n", RED);
+        // printf("%sExit\n", RED);
+        ft_putstr_fd(RED, 2);
+		ft_putstr_fd("Exit\n", 2);
         exit(0);
     }
     errno = ale2;
